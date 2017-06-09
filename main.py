@@ -50,14 +50,16 @@ document2={
 	},
 	"order_details":[
 				{
-					"restuarnt_id":"abc",
+					"order_id":100,
 					"menu_id":10,
 					"qty":5,
+					"user_id":1,
 					"amount":100
 				},
 				{
-					"restuarnt_id":"abc",
+					"order_id":200,
 					"menu_id":15,
+					"user_id":2,
 					"qty":2,
 					"amount":50
 				}
