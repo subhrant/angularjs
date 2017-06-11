@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title>Bootstrap Example</title>
+  <meta name="google-signin-client_id" content="266006773339-tbg689tnubc5jmk6taj4e55ohfjonqnp.apps.googleusercontent.com">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -54,11 +55,33 @@
       <label><input type="checkbox" name="remember"> Remember me</label>
     </div>
     <button type="Submit" class="btn btn-default">Sign up</button>
+    </div>
+
+<div class="g-signin2" data-width="300" data-height="200" data-longtitle="true">
+<button type="Submit">sign in</button>
+</div>
   </form>
     </div>
   </div>
 </div>
-
-
+<script>
+ function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+      </script>
+      <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </body>
 </html>
