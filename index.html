@@ -9,21 +9,49 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+  html,body,.container-fluid,.row{
+    height: 100%;
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+}
+  .navbar-brand,
+  .navbar-nav li a {
+      line-height: 80px;
+      height: 80px;
+      padding-top: 0;
+      font-size: 20px;
+      font-family: sans-serif; 
+  }
+  .containerhome{
+    padding-left: 0;
+    padding-bottom: 0;
+  }
     .background{
-      background-image: url('1.jpg');
+      /*background-image: url('1.jpg');*/
       background-size: cover;
+      /*height: 100%;*/
     }
     .language{
       height: 700px;
       width: 30%;
-      color: #ffffff;
-      margin-left: 220px;
-      font-size: 20px;
+      margin-left: 100px;
+      font-size: 25px;
+      font-family: /*caecilia, Times,*/ serif;
     }
+    .form1{
+      margin-left: 100px;
+      margin-top: 50px;
+      margin-right: auto;
+    }
+    .verticalLine {
+  border-left: solid thick #C0C0C0;
+}
   </style>
 </head>
-<body class="background">
-<nav class="navbar navbar-inverse">
+<body >
+<nav class="navbar>li>a navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">WebSiteName</a>
@@ -36,13 +64,14 @@
     </ul>
   </div>
 </nav>
-<div class="container">
+<div class="container-fluid containerhome">
   <div class="row ">
-    <div class="col-sm-6">
+    <div class="col-sm-6 background">
+    <img src="3.jpg">
     </div>
-    <div class="col-sm-6 language">
-     <h2>sign up here!</h2>
-  <form action="/action_page.php">
+    <div class="col-sm-6 language verticalLine">
+      <form action="/action_page.php" class="form1">
+      <h2>Create Account</h2>
     <div class="form-group">
       <label for="email">Email:</label>
       <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
@@ -55,33 +84,9 @@
       <label><input type="checkbox" name="remember"> Remember me</label>
     </div>
     <button type="Submit" class="btn btn-default">Sign up</button>
-    </div>
-
-<div class="g-signin2" data-width="300" data-height="200" data-longtitle="true">
-<button type="Submit">sign in</button>
-</div>
-  </form>
-    </div>
+      </form>
+     </div> 
   </div>
 </div>
-<script>
- function onSuccess(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    }
-    function onFailure(error) {
-      console.log(error);
-    }
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 240,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-      });
-      </script>
-      <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </body>
 </html>
